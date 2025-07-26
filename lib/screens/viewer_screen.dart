@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/media_item.dart';
+import 'dart:io';
 
 class ViewerScreen extends StatelessWidget {
   const ViewerScreen({super.key, required this.item});
@@ -9,9 +10,9 @@ class ViewerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(item.name)),
+      appBar: AppBar(title: Text(item.filePath.split('/').last)),
       body: Center(
-        child: Image.file(item.file),
+        child: Image.file(File(item.filePath)),
       ),
     );
   }

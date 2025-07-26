@@ -1,8 +1,6 @@
-import 'dart:io';
-
 class MediaItem {
-  final String name;
-  final File file;
+  final String filePath;
+  final String type;
 
-  MediaItem({required this.name, required this.file});
+  MediaItem({required this.filePath, required this.type});
 }
